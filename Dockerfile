@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine3.14 as builder
+FROM golang:1.24.0-alpine3.21 as builder
 
 WORKDIR /traefik-auth-cloudflare
 COPY . .
@@ -7,7 +7,7 @@ RUN go build
 
 ###
 
-FROM alpine:3.14
+FROM alpine:3.21
 
 # Switch to non-root user
 RUN adduser -D myapp
